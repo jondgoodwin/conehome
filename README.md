@@ -31,7 +31,46 @@ organized across the following folders:
 
 ## Building (Windows)
 
+Clone this repository to where you want to place the build environment, e.g.:
+
+    git clone https://github.com/jondgoodwin/conehome.git \cone
+
+Set the Windows CONEHOME environment variable to point to the new folder.
+Also, include the $CONEHOME/bin folder in the PATH environment variable.
+
+Be sure you have Visual Studio C++, the Windows SDK, and LLVM installed.
+Obtain and build the Cone compiler as per its instructions.
+You should be able to run 'conec --help' (set PATH as needed).
+
+Modify the $CONEHOME\bin\congo Python script to point to the correct
+Microsoft SDK and Visual Studio folders (auto-detection for these is not yet in place).
+
+Build the Cone runtime library
+    cd $CONEHOME\packages\conert
+	congo
+
+
 ## Building (Linux)
+
+Clone this repository to where you want to place the build environment, e.g.:
+
+    git clone https://github.com/jondgoodwin/conehome.git /cone
+
+Modify the `~/.bash_profile` or equivalent file to define CONEHOME, e.g.:
+
+    export CONEHOME="/cone"
+
+Make congo usable by creating a symbolic link:
+
+    ln -s /cone/bin/congo /usr/bin/congo
+
+Obtain and build the Cone compiler as per its instructions.
+You should be able to run 'conec --help' (set symbol link as needed).
+
+Build the Cone runtime library
+    cd $CONEHOME\packages\conert
+	congo
+
 
 ## License
 
