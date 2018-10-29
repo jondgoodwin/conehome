@@ -31,7 +31,7 @@ organized across the following folders:
 
 ## Building (Windows)
 
-Clone this repository to where you want to place the build environment, e.g.:
+Clone this repository to the location of the build environment, e.g.:
 
     git clone https://github.com/jondgoodwin/conehome.git \cone
 
@@ -42,8 +42,9 @@ Be sure you have Visual Studio C++, the Windows SDK, and LLVM installed.
 Obtain and build the Cone compiler as per its instructions.
 You should be able to run 'conec --help' (set PATH as needed).
 
-Modify the $CONEHOME\bin\congo Python script to point to the correct
-Microsoft SDK and Visual Studio folders (auto-detection for these is not yet in place).
+The "congo" build tool **must** be invoked within the "Developer Command Prompt" app.
+This sets up the PATH, INCLUDE, LIBPATH and other environment variables correctly,
+without which congo will fail to work.
 
 Build the Cone runtime library
     cd $CONEHOME\packages\conert
